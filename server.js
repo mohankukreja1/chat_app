@@ -16,6 +16,10 @@ io.on('connection',function (socket) {
     socket.on('msg',function (data) {
          io.emit('msg2',data);
     })
+
+    socket.on('key',function (data) {
+        socket.broadcast.emit('typing',data);
+    })
 })
 
 
