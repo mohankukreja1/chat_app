@@ -13,6 +13,9 @@ const io = socketio(server)
 
 io.on('connection',function (socket) {
     console.log('connection made '+socket.id);
+    socket.on('msg',function (data) {
+         io.emit('msg2',data);
+    })
 })
 
 
